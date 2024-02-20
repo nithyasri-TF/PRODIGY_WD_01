@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Interactive Navigation Menu</title>
+    <style>
+      body {
+        font-family: "Arial", sans-serif;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      header {
+        background-color: #333;
+        color: #fff;
+        text-align: center;
+        padding: 1em;
+      }
+
+      nav {
+        background-color: #333;
+        color: #fff;
+        text-align: center;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+      }
+
+      nav a {
+        text-decoration: none;
+        color: #fff;
+        margin: 0 15px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: color 0.3s;
+      }
+
+      nav a:hover {
+        color: #ffd700; /* Change color on hover */
+      }
+
+      section.hero {
+        background: url("restaurant-hero.jpg") no-repeat center center fixed;
+        background-size: cover;
+        color: #fff;
+        text-align: center;
+        padding: 4em;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+
+      section.menu {
+        background-color: #eee;
+        padding: 2em;
+        text-align: center;
+      }
+
+      section.contact {
+        background-color: #333;
+        color: #fff;
+        padding: 2em;
+        text-align: center;
+      }
+
+      footer {
+        background-color: #333;
+        color: #fff;
+        text-align: center;
+        padding: 1em;
+      }
+
+      @media screen and (max-width: 600px) {
+        section.hero {
+          padding: 2em;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Bistro Bliss</h1>
+      <p>Delicious Food, Amazing Experience</p>
+    </header>
+
+    <nav>
+      <a onclick="scrollToSection('home')">Home</a>
+      <a onclick="scrollToSection('menu')">Menu</a>
+      <a onclick="scrollToSection('contact')">Contact</a>
+    </nav>
+
+    <section class="hero" id="home">
+      <h2>Welcome to Our Restaurant</h2>
+      <p>Indulge in the finest culinary delights.</p>
+      <a onclick="scrollToSection('menu')">View Menu</a>
+    </section>
+
+    <section class="menu" id="menu">
+      <h2>Our Menu</h2>
+      <p>Explore our delicious offerings.</p>
+    </section>
+
+    <section class="contact" id="contact">
+      <h2>Contact Us</h2>
+      <p>We'd love to hear from you. Reach out!</p>
+    </section>
+
+    <footer>&copy; 2024 Bistro Bliss. All rights reserved.</footer>
+
+    <script>
+      function scrollToSection(sectionId) {
+        const section = document.getElementById(sectionId);
+        section.scrollIntoView({ behavior: "smooth" });
+      }
+    </script>
+  </body>
+</html>
